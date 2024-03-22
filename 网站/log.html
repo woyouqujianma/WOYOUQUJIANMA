@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>登录</title>
+</head>
+<body>
+    <div class="container">
+        <from class="form" id="login-form"
+            <h2>登录</h2>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名">
+            <lable for="password">密码</lable>
+            <input type="password" id="password" name="password" placeholder="请输入密码">
+            <button type="submit">登录</button>
+            <p>没有账号？<a href="#" id="register-link">马上注册</a></p >
+        </form>
+
+        <form class="form" id="register-form" style="display:none;">
+            <h2>注册</h2>
+            <label for="r-username">用户名</label>
+            <input type="text" id="r-username" name="username" placeholder="请输入用户名">
+            <label for="r-password">密码</label>
+            <input type="password" id="r-password" name="password" placeholder="请输入密码">
+            <label for="confirm-password">确认密码</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入密码">
+            <button type="submit">注册</button>
+            <p>已有账号？<a href="#" id="login-link">返回登陆</a></p>
+        </form>
+
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form'); 
+        const registerLink = document.getElementById('register-link');
+        const loginLink = document.getElementById('login-link');
+
+        registerLink.addEventListener('click',(e) => {
+            e.preventDefault();
+            loginForm.style.display ='none';
+            registerForm.style.display='block'; 
+        });
+    </script>
+    
+</body>
+</html>
